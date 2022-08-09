@@ -10,9 +10,11 @@ void dfs(int x){
     visited[x] = true;
     ++ans;
     
-    for (vector<int>::iterator iter = virus[x].begin(); iter != virus[x].end(); iter++){
-        if (!visited[*iter]){
-            dfs(*iter);
+    for (int i = 0; i < virus[x].size(); i++){
+        int index = virus[x][i];
+        
+        if (!visited[index]){
+            dfs(index);
         }
     }
 }
